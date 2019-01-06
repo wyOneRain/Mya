@@ -15,7 +15,7 @@ namespace Mya.API
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "测试" };
         }
 
         // GET: api/Test/5
