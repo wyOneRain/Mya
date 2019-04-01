@@ -44,7 +44,7 @@ namespace Mya.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string userName, string userPwd, string returnUrl)
         {
-            var user = _context.Account.SingleOrDefault(s => s.userName == userName && s.userPwd == userPwd);
+            var user = _context.Account.SingleOrDefault(s => s.UserName == userName && s.UserPwd == userPwd);
 
             //var user = list.SingleOrDefault(s => s.UserName == userName && s.UserPwd == userPwd);
             if (user != null)
@@ -52,8 +52,8 @@ namespace Mya.Controllers
                 //用户标识
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
                 identity.AddClaim(new Claim(ClaimTypes.Sid, userName));
-                identity.AddClaim(new Claim(ClaimTypes.Name, user.userName));
-                identity.AddClaim(new Claim(ClaimTypes.Role, user.userRole));
+                identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.Role, user.UserRole));
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
                 if (returnUrl != null)
                 {
@@ -92,7 +92,7 @@ namespace Mya.Controllers
         public IActionResult Index()
         {
             string Name = User.Identity.Name;
-            var user = _context.Account.SingleOrDefault(s => s.userName == Name);
+            var user = _context.Account.SingleOrDefault(s => s.UserName == Name);
             return View(user);
         }
     }

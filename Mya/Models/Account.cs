@@ -12,21 +12,21 @@ namespace Mya.Models
     {
         [Key]
         [Display(Name = "用户ID")]
-        public string userId { get; set; }
+        public string UserId { get; set; }
 
         [Display(Name = "用户名")]
-        public string userName { get; set; }
+        public string UserName { get; set; }
 
         [Display(Name = "用户密码")]
-        public string userPwd { get; set; }
+        public string UserPwd { get; set; }
 
         [Display(Name = "用户性别")]
         public string userSex { get; set; }
 
         [Display(Name = "用户邮箱")]
-        public string userEmail { get; set; }
+        public string UserEmail { get; set; }
 
         [Display(Name = "用户权限")]
-        public string userRole { get; set; }
+        public string UserRole { get; set; }
     }
 }
