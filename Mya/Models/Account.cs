@@ -21,7 +21,7 @@ namespace Mya.Models
         public string UserPwd { get; set; }
 
         [Display(Name = "用户性别")]
-        public string userSex { get; set; }
+        public string UserSex { get; set; }
 
         [Display(Name = "用户邮箱")]
         public string UserEmail { get; set; }
